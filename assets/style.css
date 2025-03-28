@@ -54,6 +54,7 @@ table {
 	border-spacing: 0;
 }
 body {
+	
 
 }
 section {
@@ -127,6 +128,7 @@ header {
 	position: absolute;
 }
 #banner .arrow_left {
+	
 	left: 10px;
 }
 #banner .arrow_right {
