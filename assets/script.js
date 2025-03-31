@@ -1,18 +1,32 @@
-const slides = [
-	{
-		"image":"slide1.jpg",
-		"tagLine":"Impressions tous formats <span>en boutique et en ligne</span>"
-	},
-	{
-		"image":"slide2.jpg",
-		"tagLine":"Tirages haute définition grand format <span>pour vos bureaux et events</span>"
-	},
-	{
-		"image":"slide3.jpg",
-		"tagLine":"Grand choix de couleurs <span>de CMJN aux pantones</span>"
-	},
-	{
-		"image":"slide4.png",
-		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
-	}
-]
+
+
+
+/**variable DoM**/
+const leftArrow = document.querySelector('.arrow_left');
+const rightArrow = document.querySelector('.arrow_right');
+let slide = document.getElementsByClassName('slide');
+let i = 0;
+
+
+
+/**slide */
+leftArrow.addEventListener('click',()=>{
+	let currentSlide = slide[i];
+	slide[i].style.transform = 'tranlateX(0%);'
+	i++;
+	
+	console.log(i)
+	console.log (currentSlide)
+
+	i= i%slide.length
+})
+
+
+
+
+
+
+
+
+
+	
