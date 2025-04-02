@@ -104,7 +104,7 @@ header {
 .devis {
 	background-color: var(--secondary-color);
 }
-
+/** banner actualisation**/
 #banner  {
 	display: flex;
 	flex-direction: column;
@@ -113,7 +113,7 @@ header {
 	width: 100%;
 	min-height: 470px;
 	position: relative;
-	transition: transform 0.8s;
+	
 }
 
 #banner .carrousel{
@@ -125,16 +125,23 @@ header {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+
+	
 }
 #banner .slide {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
 	width: 100%;
-	transform: translateX(100%);
-	height: 100%;
-
 	
+	height: 100%;
+	transition: all 800ms;
+
+}
+
+#show{
+	
+	transform: translateX(0%);
 
 }
 
@@ -169,7 +176,11 @@ header {
 .dots {
 	position: absolute;
 	bottom: 40px;
+	left: 50%;
 	display: flex;
+	z-index: 2;
+	color: white;
+	
 }
 .dot {
 	margin-inline: 5px;
@@ -178,7 +189,8 @@ header {
 	background-color: #ffffff00;
 	border: 3px solid #fff;
 	border-radius: 100%;
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	
 }
 .dot_selected {
 	background-color: #fff;
