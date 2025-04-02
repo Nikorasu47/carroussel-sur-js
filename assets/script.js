@@ -5,29 +5,34 @@
 const leftArrow = document.querySelector('.arrow_left');
 const rightArrow = document.querySelector('.arrow_right');
 let slide = document.getElementsByClassName('slide');
+let dots = document.getElementsByClassName('dot')
 let i = 0;
+
+
+/**fonction*/
 
 
 
 /**slide */
 leftArrow.addEventListener('click',()=>{
 	let currentSlide = slide[i];
+	currentSlide.id ='hideLeft';
 	
-	
-	if (i<slide.length) {	
-		i++;
-	}else{
-		i=0
-	}
+	let currentDot = dots[i];
+	currentDot.classList.remove('dot_selected')
 
 	
-	if (i!==currentSlide){
-		currentSlide.style.transform = 'translateX(100%)';
-	}else {
-		currentSlide.style.transform = 'translateX(0%)';
+	if (i>0) {	
+		i--;
+	}else{
+		i=3
 	}
+
+	currentSlide=slide[i]
+	currentSlide.id = 'showLeft'
 	
-	
+	currentDot = dots[i]
+	currentDot.classList.add('dot_selected')
 	
 	console.log(i)
 	console.log (currentSlide)
@@ -36,24 +41,28 @@ leftArrow.addEventListener('click',()=>{
 })
 
 rightArrow.addEventListener('click',()=>{
+
 	let currentSlide = slide[i];
-	currentSlide.style.transform = 'translateX(0%)';
+	currentSlide.id ='hideRight'
 	
+	let currentDot = dots[i];
+	currentDot.classList.remove('dot_selected')
+
+	if (i<slide.length-1) {	
+		i++;
+	}else{
+		i=0
+	}
+
+	currentSlide=slide[i]
+	currentSlide.id = 'showRight'
+	
+	currentDot = dots[i]
+	currentDot.classList.add('dot_selected')
 	
 	console.log(i)
 	console.log (currentSlide)
-
-	if (i>0) {
-		i--;
-	}else{
-		i=3
-	}
-
-	if (i!==currentSlide){
-		currentSlide.style.transform = 'translateX(-100%)';
-	}else {
-		currentSlide.style.transform = 'translateX(0%)';
-	}
+	
 	
 })
 

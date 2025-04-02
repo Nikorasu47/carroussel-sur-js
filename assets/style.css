@@ -135,22 +135,87 @@ header {
 	width: 100%;
 	
 	height: 100%;
-	transition: all 800ms;
-
-}
-
-#show{
 	
-	transform: translateX(0%);
 
 }
+#z-i{
+	z-index: 5;
+}
+/**id pour chaque cotée + keyframe**/
+/*Gauche*/
+@keyframes leftStart {
+		
+	from{
+		transform: translateX(100%);
+	}
+	to{
+		transform: translateX(0%);
+	}
+}
+@keyframes leftEnd {
+	from{
+		transform: translateX(0%);
+	}
+	to{
+		transform: translateX(-100%);
+	}
+}
 
+#showLeft{
 
-.banner-img {
+	animation: leftStart 1000ms forwards;
+	z-index: 1;
+
+}
+#hideLeft{
+	animation: leftEnd 1000ms forwards;
+	z-index: 1;
+}
+
+/*droit*/
+@keyframes rightStart {
+		
+	from{
+		transform: translateX(-100%);
+	}
+	to{
+		transform: translateX(0%);
+	}
+}
+@keyframes rightEnd {
+	from{
+		transform: translateX(0%);
+	}
+	to{
+		transform: translateX(100%);
+	}
+}
+
+#showRight{
+
+	animation: rightStart 1000ms forwards;
+	z-index: 1;
+
+}
+#hideRight{
+	animation: rightEnd 1000ms forwards;
+	z-index: 1;
+}
+
+/*fin traitement*/
+
+#banner p{
 	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50% , -50%);
+	
+}
+.banner-img {
+	
 	width: 100%;
 	height: 100%;
-	z-index: -1;
+	
 	object-fit: cover;
 	object-position: center;
 }
@@ -166,11 +231,13 @@ header {
 	position: absolute;
 	cursor: pointer;
 	left: 10px;
+	z-index: 5;
 }
 #banner .arrow_right {
 	position: absolute;
 	cursor: pointer;
 	right: 10px;
+	z-index: 5;
 }
 /* Gestion des points du carrousel */
 .dots {
