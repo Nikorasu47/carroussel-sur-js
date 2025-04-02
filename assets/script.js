@@ -10,59 +10,47 @@ let i = 0;
 
 
 /**fonction*/
+function current (hideId , showId , isIncrement){
+	let currentSlide = slide[i]; 
+	let currentDot = dots[i];
 
+	currentSlide.id =hideId;
+	currentDot.classList.remove('dot_selected')
+
+	if (isIncrement === true) {
+		if (i>0) {	
+			i--;
+		}else{
+			i=3
+		}
+	}else{
+		if (i<slide.length-1) {	
+			i++;
+		}else{
+			i=0
+		}
+	}
+
+	currentSlide = slide[i]; 
+	currentDot = dots[i];
+
+	currentSlide.id = showId;
+	currentDot.classList.add('dot_selected');
+
+
+}
 
 
 /**slide */
 leftArrow.addEventListener('click',()=>{
-	let currentSlide = slide[i];
-	currentSlide.id ='hideLeft';
-	
-	let currentDot = dots[i];
-	currentDot.classList.remove('dot_selected')
 
-	
-	if (i>0) {	
-		i--;
-	}else{
-		i=3
-	}
-
-	currentSlide=slide[i]
-	currentSlide.id = 'showLeft'
-	
-	currentDot = dots[i]
-	currentDot.classList.add('dot_selected')
-	
-	console.log(i)
-	console.log (currentSlide)
-	
+	current ('hideLeft','showLeft', true)
 
 })
 
 rightArrow.addEventListener('click',()=>{
 
-	let currentSlide = slide[i];
-	currentSlide.id ='hideRight'
-	
-	let currentDot = dots[i];
-	currentDot.classList.remove('dot_selected')
-
-	if (i<slide.length-1) {	
-		i++;
-	}else{
-		i=0
-	}
-
-	currentSlide=slide[i]
-	currentSlide.id = 'showRight'
-	
-	currentDot = dots[i]
-	currentDot.classList.add('dot_selected')
-	
-	console.log(i)
-	console.log (currentSlide)
-	
+	current ('hideRight','showRight', false)
 	
 })
 
