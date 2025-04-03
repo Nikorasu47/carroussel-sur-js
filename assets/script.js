@@ -11,12 +11,13 @@ let i = 0;
 
 /**fonction*/
 function current (hideId , showId , isIncrement){
+	/*création de variable selection*/
 	let currentSlide = slide[i]; 
 	let currentDot = dots[i];
-
+	/* id initial*/
 	currentSlide.id =hideId;
 	currentDot.classList.remove('dot_selected')
-
+	/*ajout d'une condition pour incrémenter l'index*/
 	if (isIncrement === true) {
 		if (i>0) {	
 			i--;
@@ -30,10 +31,10 @@ function current (hideId , showId , isIncrement){
 			i=0
 		}
 	}
-
+	/*mise a jour des variable*/
 	currentSlide = slide[i]; 
 	currentDot = dots[i];
-
+	/*mise a jour de l'ic*/ 
 	currentSlide.id = showId;
 	currentDot.classList.add('dot_selected');
 
