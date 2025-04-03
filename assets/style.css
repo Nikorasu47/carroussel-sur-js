@@ -138,7 +138,7 @@ header {
 	
 
 }
-#z-i{
+.z-i{
 	z-index: 5;
 }
 /**id pour chaque cotée + keyframe**/
@@ -161,13 +161,13 @@ header {
 	}
 }
 
-#showLeft{
+.showLeft{
 
 	animation: leftStart 1000ms forwards;
 	z-index: 1;
 
 }
-#hideLeft{
+.hideLeft{
 	animation: leftEnd 1000ms forwards;
 	z-index: 1;
 }
@@ -191,13 +191,13 @@ header {
 	}
 }
 
-#showRight{
+.showRight{
 
 	animation: rightStart 1000ms forwards;
 	z-index: 1;
 
 }
-#hideRight{
+.hideRight{
 	animation: rightEnd 1000ms forwards;
 	z-index: 1;
 }
@@ -240,12 +240,12 @@ header {
 	z-index: 5;
 }
 /* Gestion des points du carrousel */
-.dots {
+#dots {
 	position: absolute;
 	bottom: 40px;
 	left: 50%;
 	display: flex;
-	z-index: 2;
+	z-index: 6;
 	color: white;
 	
 }
@@ -257,6 +257,7 @@ header {
 	border: 3px solid #fff;
 	border-radius: 100%;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	
 	
 }
 .dot_selected {
